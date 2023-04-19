@@ -1,4 +1,8 @@
-
+/* 
+ * Class to manipulate UNORDERED arrays
+ * Companion to ArrayDemoString.java
+ */
+ 
 public class Q3PracticalAnswer
 {
     // global variables and constants
@@ -47,7 +51,7 @@ public class Q3PracticalAnswer
     public static void add(String[] a, String data)
     {
         if (isFull())
-            System.out.println("Error adding " + data);
+            System.out.println("Error adding " + data + " array is full.");
         else
         {
             for (int i = 0; i < MAXSIZE; i++)
@@ -63,6 +67,7 @@ public class Q3PracticalAnswer
         }
     }
 
+	// simple linear search that returns the index of data or -1
     public static int search(String[] a, String data)
     {
         for (int i = 0; i < MAXSIZE; i++)
@@ -74,6 +79,7 @@ public class Q3PracticalAnswer
         return -1;
     }
 
+	// swaps the items of 2 valid array indices
     public static void swap(String[] a, int index1, int index2)
     {
         if ((index1 < 0 || index1 >= MAXSIZE) || (index2 < 0 || index2 >= MAXSIZE))
@@ -88,6 +94,7 @@ public class Q3PracticalAnswer
         }
     }
 
+	// replace the original string with another one (replacement)
     public static void replace(String[] a, String original, String replacement)
     {
         int indexToReplace = search(a, original);
@@ -100,6 +107,7 @@ public class Q3PracticalAnswer
         }
     }
 
+	// not included in the test
     public static void replaceAll(String[] a, String original, String replacement)
     {
         int indexToReplace = search(a, original);
@@ -116,6 +124,7 @@ public class Q3PracticalAnswer
         }
     }
 
+	// removes a string from the array
     public static void remove(String[] a, String data)
     {
         int indexToRemove = search(a, data);
@@ -129,7 +138,7 @@ public class Q3PracticalAnswer
         }
     }
 
-    // optional
+    // this was not in the test, removes an element given an index
     public static void remove(String[] a, int indexToRemove)
     {
         if (indexToRemove < 0 || indexToRemove >= MAXSIZE)
@@ -144,6 +153,7 @@ public class Q3PracticalAnswer
             }
     }
 
+	// puts data at index 'index' and moves the element @ index wherever there's room for itx
     public static void insert(String[] a, String data, int index)
     {
 		if ((index < 0 || index >= MAXSIZE))
